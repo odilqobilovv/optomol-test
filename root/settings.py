@@ -24,7 +24,8 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["web-production-0e7e5.up.railway.app", "127.0.0.1", "localhost"]
+
 
 # Application definition
 
@@ -130,9 +131,16 @@ CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 CORS_ALLOW_HEADERS = ["*"]
 # CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://web-production-0e7e5.up.railway.app/"
-]
+
+CSRF_TRUSTED_ORIGINS = ["https://web-production-0e7e5.up.railway.app"]
+
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 
 
 CSRF_COOKIE_SECURE = True
