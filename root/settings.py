@@ -130,6 +130,11 @@ CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
 CORS_ALLOW_HEADERS = ["*"]
 # CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://web-production-0e7e5.up.railway.app/"
+]
+
+
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
